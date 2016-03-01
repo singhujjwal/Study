@@ -1,4 +1,4 @@
-package com.linkedin;
+package com.practice;
 
 import java.io.BufferedInputStream;
 import java.io.BufferedOutputStream;

@@ -1,4 +1,4 @@
-package com.linkedin;
+package com.practice;
 
 import java.util.Date;
 
@@ -118,7 +118,7 @@ public class EditDistanceStrings {
 
     public static void main(String[] args) {
         
-        String str1 = "UjjwalKumar eh";
+        String str1 = "Ujjwal Kumar eh";
         String str2 = "SinghNew asd";
         
         EditDistanceStrings solution = new EditDistanceStrings();

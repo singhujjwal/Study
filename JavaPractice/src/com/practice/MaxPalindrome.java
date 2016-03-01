@@ -1,4 +1,4 @@
-package com.linkedin;
+package com.practice;
 
 public class MaxPalindrome {
 
