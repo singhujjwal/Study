@@ -118,18 +118,21 @@ public class EditDistanceStrings {
 
     public static void main(String[] args) {
         
-        String str1 = "Ujjwal Kumar eh";
+        String str1 = "Ujjwal Kumar eh asd jasbdn jbas djb askjbn asd";
         String str2 = "SinghNew asd";
         
         EditDistanceStrings solution = new EditDistanceStrings();
 
-        System.out.println("Starting DP edit distance");
-        System.out.println(new Date());
-        System.out.println(solution.findDistance(str1, str2));
         System.out.println("Starting recursive edit distance");
-        System.out.println(new Date());
+        System.out.println("Start Time " + new Date());
         System.out.println(solution.findDistance(str1, str2, str1.length(), str2.length()));
-        System.out.println(new Date());
+        System.out.println("End time " + new Date());
+
+        System.out.println("Starting DP edit distance");
+        System.out.println("Start Time " + new Date());
+        System.out.println(solution.findDistance(str1, str2));
+        System.out.println("End Time " + new Date());
+
         System.out.println("See the time difference for such a small string WOW");
 
     }
