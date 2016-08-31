@@ -16,7 +16,7 @@ import com.jcraft.jsch.Session;
  * @author kodehelp
  *
  */
-public class Test {
+public class SFTPExample {
 
     public static void main(String[] args) {
         String SFTPHOST = "172.18.138.170";

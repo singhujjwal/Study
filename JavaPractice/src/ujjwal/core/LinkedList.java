@@ -21,8 +21,6 @@ public class LinkedList {
         LinkedList.head = head;
     }
 
-
-
     public void append(Integer value) {
 
         if (head == null) {
@@ -44,13 +42,12 @@ public class LinkedList {
             temp = temp.next;
         }
         System.out.println();
-        
+
     }
 
     // a->b->c->d->e
 
     // e->d->c->b->a
-
 
     public Node reverseList(Node head) {
         Node prev = null;
@@ -67,7 +64,6 @@ public class LinkedList {
         head = prev;
         return head;
     }
-
 
     public static void main(String[] args) {
 

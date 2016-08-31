@@ -6,7 +6,7 @@ import java.io.IOException;
 import java.util.ArrayList;
 import java.util.List;
 
-public class RegeXTest {
+public class RegeXTestForIntegerString {
 
     public static void main(String[] args) {
         List<String> inputList = new ArrayList<>();

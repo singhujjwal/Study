@@ -1,52 +1,61 @@
 package ujjwal.practice;
 
-import java.io.BufferedReader;
 import java.io.IOException;
-import java.io.InputStreamReader;
-
-import org.json.simple.JSONValue;
-import org.json.simple.parser.ParseException;
 
 public class A {
 
-    /**
-     * @param args
-     * @throws IOException
-     */
-    public static void main(String[] args) throws IOException {
+    public static String binaryAddition(String s1, String s2) {
+        if (s1 == null || s2 == null) {
+            return "";
+        }
 
-        String commandToExecute = "/usr/bin/python /Users/ujjsingh/TopController/ujjwal-top-controller/tools/upgradeScripts/phone_details_from_switch.py -ip 10.15.254.166 -username ujjsingh -password QmFsZW5vMjM1JA== -action generate";
-
-        Runtime cmdRunTime = Runtime.getRuntime();
-        Process proc = cmdRunTime.exec(commandToExecute);
-        BufferedReader in = new BufferedReader(new InputStreamReader(proc.getInputStream()));
-
-        String line = null;
-        while ((line = in.readLine()) != null) {
-            System.out.println(line);
-            if (line.indexOf("SWITCH DATA:") != -1) {
-                String jsonArr = line.substring("SWITCH DATA:->".length());
-                System.out.println("Ujjwal JSON Array is ");
-                System.out.println(jsonArr.trim());
-
-                try {
-                    org.json.simple.JSONArray arr1 = (org.json.simple.JSONArray) JSONValue
-                            .parseWithException(jsonArr.trim());
-                    System.out.println("The array is-------");
-                    System.out.println(arr1);
-                } catch (ParseException e) {
-                    // TODO Auto-generated catch block
-                    e.printStackTrace();
-                }
-
+        StringBuilder sb = new StringBuilder();
+        int first = s1.length()-1;
+        int second = s2.length()-1;
+        
+        int carry = 0;
+        while(first >= 0 || second >= 0){
+            int sum = carry;
+            
+            if(first >= 0){
+                sum += s1.charAt(first) - '0';
+                first--;
             }
+            
+            if (second >= 0) {
+                sum += s2.charAt(second) - '0';
+                second--;
+            }
+            carry = sum >> 1;
+            sum = sum & 1;
+            sb.append(sum == 0 ? '0' : '1');
+        }
+        if(carry == 1){
+            sb.append("1");
         }
 
-        BufferedReader err = new BufferedReader(new InputStreamReader(proc.getErrorStream()));
-        while ((line = err.readLine()) != null) {
-            System.out.println(line);
+        return sb.reverse().toString();
+    }
+
+    /*
+     * Method to subtract s2 from s1 return negative/positive whatever
+     * 
+     * 1100 - 10
+     */
+    public String binarySubtraction(String s1, String s2) {
+
+        if (s1 == null || s2 == null) {
+            System.out.println("Cant subtract");
+            return "";
         }
 
+        return null;
+    }
+
+    public static void main(String[] args) throws IOException {
+        String result = binaryAddition("1010", "10");
+        System.out.println(result);
+        System.out.println("Decimal equivalent " + Integer.parseInt(result, 2));
     }
 
 }

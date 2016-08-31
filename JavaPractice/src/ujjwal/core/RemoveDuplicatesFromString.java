@@ -4,7 +4,15 @@ import static org.junit.Assert.*;
 
 import org.junit.Test;
 
-public class CCITest {
+/***
+ * Cracking the coding interview test Method for removing duplicates from a
+ * String
+ * 
+ * @author ujjsingh
+ *
+ */
+
+public class RemoveDuplicatesFromString {
     
     
     // Method to remove duplicate characters from String
