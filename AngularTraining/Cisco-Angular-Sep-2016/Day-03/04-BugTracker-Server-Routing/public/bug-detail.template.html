@@ -1,0 +1,11 @@
+<h3>{{bug.name}}</h3>
+<div>
+	<label for="">Status :</label>
+	<span>{{bug.isClosed ? 'Closed' : 'Open'}}</span></div>
+<div>
+	<p>{{bug.desc}}</p>
+</div>
+<div>
+	<label for="">Severity :</label>
+	<bug-severity data="bug" min="1" max="5" onchange="save(bug)"></bug-severity>
+</div>
